@@ -74,3 +74,7 @@ Jawab :
 ![Screenshot](assets/Create%20next%20app.png)
 ![Screenshot](assets/hello-world.png)
 ![Screenshot](assets/running%20hello-world.png)
+
+### Pertanyaan Praktikum 3
+1. Buktikan dengan screenshoot yang menunjukkan bahwa tahapan percobaan di atas telah berhasil Anda lakukan!
+![Screenshot](assets/MyButton.png)
