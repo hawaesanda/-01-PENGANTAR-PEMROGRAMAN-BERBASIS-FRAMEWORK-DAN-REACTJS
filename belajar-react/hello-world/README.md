@@ -78,3 +78,9 @@ Jawab :
 ### Pertanyaan Praktikum 3
 1. Buktikan dengan screenshoot yang menunjukkan bahwa tahapan percobaan di atas telah berhasil Anda lakukan!
 ![Screenshot](assets/MyButton.png)
+
+### Pertanyaan Praktikum 4
+1. Untuk apakah kegunaan sintaks user.imageUrl?
+Jawab : user.imageUrl digunakan untuk mengambil alamat URL  gambar yang didalam objek user.
+2. Buktikan dengan screenshoot yang menunjukkan bahwa tahapan percobaan di atas telah berhasil Anda lakukan!
+![Screenshot](assets/Profile.png)
