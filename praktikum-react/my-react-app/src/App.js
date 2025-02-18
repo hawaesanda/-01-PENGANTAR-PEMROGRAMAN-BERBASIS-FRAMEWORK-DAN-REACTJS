@@ -1,6 +1,7 @@
-import React from 'react';
+// import React from 'react';
 import Counter from './Counter';
 import Greeting from './Greeting';
+import React, { useState } from 'react';
 
 // Komponen header
 function Header() {
@@ -38,6 +39,7 @@ function App() {
       <Main/>
       <Greeting name="Hawa" />
       <Counter/>
+      <Example/>
       <Footer/>
     </div>
   );
@@ -45,3 +47,30 @@ function App() {
 
 export default App;
 
+function Example() {
+  const [name, setName] = useState('');
+  const [age, setAge] = useState(0);
+  const [email, setEmail] = useState('');
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleAgeChange = (e) => {
+    setAge(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  return (
+    <div>
+      <input type="text" placeholder="Nama" value={name} onChange={handleNameChange}/>
+      <input type="number" placeholder="Umur" value={age} onChange={handleAgeChange}/>
+      <input type="email" placeholder="Email" value={email} onChange={handleEmailChange}/>
+
+      <p>{name} berumur {age} tahun dan emailnya adalah {email}</p>
+    </div>
+  )
+}
