@@ -40,6 +40,8 @@ function App() {
       <Greeting name="Hawa" />
       <Counter/>
       <Example/>
+      <TodoList/>
+      {/* <TodoItem/> */}
       <Footer/>
     </div>
   );
@@ -74,3 +76,54 @@ function Example() {
     </div>
   )
 }
+
+// TUGAS
+// Komponen untuk menampilkan item tugas
+function TodoItem({ task, onDelete }) {
+  return (
+    <li style={{ display: 'list-item', listStyleType: 'disc', marginBottom: '5px' }}>
+      <span style={{ display: 'inline-block', minWidth: '200px' }}>{task}</span>
+      <button onClick={onDelete} style={{ marginLeft: '20px', color: 'red' }}>Hapus</button>
+    </li>
+    );
+  }
+
+// Komponen TodoList
+function TodoList() {
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState('');
+
+  const handleAddTask = () => {
+    if (newTask.trim()) {
+      setTasks([...tasks, newTask]);
+      setNewTask('');
+    }
+  };
+
+  const handleDeleteTask = (index) => {
+    const updatedTasks = tasks.filter((_, i) => i !== index);
+    setTasks(updatedTasks);
+  };
+
+  return (
+    <div className="p-4 max-w-md mx-auto bg-white shadow-lg rounded-2xl">
+      <h2 className="text-xl font-semibold mb-4">Daftar Tugas</h2>
+      <div className="flex mb-4">
+        <input 
+          type="text" 
+          className="flex-grow p-2 border rounded-l-2xl" 
+          placeholder="Tambahkan tugas baru" 
+          value={newTask} 
+          onChange={(e) => setNewTask(e.target.value)}
+        />
+        <button onClick={handleAddTask} className="p-2 bg-blue-500 text-white rounded-r-2xl hover:bg-blue-600">Tambah</button>
+      </div>
+      <ul>
+        {tasks.map((task, index) => (
+          <TodoItem key={index} task={task} onDelete={() => handleDeleteTask(index)} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
