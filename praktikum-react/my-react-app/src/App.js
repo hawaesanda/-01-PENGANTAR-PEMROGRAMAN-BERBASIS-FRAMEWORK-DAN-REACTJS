@@ -1,4 +1,5 @@
 import React from 'react';
+import Counter from './Counter';
 
 // Komponen header
 function Header() {
@@ -34,6 +35,7 @@ function App() {
     <div>
       <Header/>
       <Main/>
+      <Counter/>
       <Footer/>
     </div>
   );
